@@ -7,13 +7,13 @@ pipeline {
         stage('Build') { 
             steps { 
                 echo 'make' 
-                echo $BRANCH_NAME
+                echo "${BRANCH_NAME}"
             }
         }
         stage('Test'){
             steps {
                 echo 'make check'
-              echo $JOB_NAME
+                echo ${JOB_NAME}
             }
         }
         stage('Deploy') {
