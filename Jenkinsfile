@@ -1,13 +1,10 @@
 pipeline { 
     agent any 
-    options {
-        skipStagesAfterUnstable()
-    }
     stages {
         stage('Build') { 
             steps { 
                 echo 'make' 
-                echo "${BRANCH_NAME}"
+                echo "${withEnv.BRANCH_NAME}"
             }
         }
         stage('Test'){
