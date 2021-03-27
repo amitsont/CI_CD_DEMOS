@@ -7,7 +7,7 @@ pipeline {
         stage('Build') { 
             steps { 
                 echo 'make' 
-                echo $env.BRANCH_NAME
+                echo $BRANCH_NAME
             }
         }
         stage('Test'){
