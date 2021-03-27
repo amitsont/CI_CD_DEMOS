@@ -10,7 +10,7 @@ pipeline{
       stage('2nd')
       {
         steps{
-        checkout([$class: 'GitSCM', userRemoteConfigs: [url:https://github.com/amitsont/CI_CD_DEMOS]])
+        checkout([$class: 'GitSCM', userRemoteConfigs: [url: 'https://github.com/amitsont/CI_CD_DEMOS']])
         }
       }
       }
