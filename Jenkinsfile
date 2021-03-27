@@ -7,7 +7,7 @@ pipeline {
     stage('Example') {
       steps {
         /* CORRECT */
-        sh('echo ${STATEMENT}')
+        echo "${STATEMENT}"
       }
     }
   }
