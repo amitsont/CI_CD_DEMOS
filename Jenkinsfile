@@ -5,6 +5,7 @@ pipeline {
             steps { 
                 echo 'make' 
                 echo "${env.BRANCH_NAME}"
+                echo "${currentBuild.timeInMillis}"
             }
         }
         stage('Test'){
