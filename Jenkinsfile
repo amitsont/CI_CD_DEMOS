@@ -1,6 +1,14 @@
 pipeline {
-  node any{
-   sh 'echo Hello World'
+  agent any{
+    stages{
+         stage('1st')
+      {
+        steps{
+          echo "Hello World"
+        }
+        
+      }
+      
+    }
   }
-
 }
