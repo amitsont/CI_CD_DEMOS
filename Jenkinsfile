@@ -1,17 +1,24 @@
-pipeline{
-  agent any
-    stages{
-         stage('1st')
-        {
-          steps {
-            echo "Hello World"
-                }
+pipeline { 
+    agent any 
+    options {
+        skipStagesAfterUnstable()
+    }
+    stages {
+        stage('Build') { 
+            steps { 
+                sh 'make' 
+            }
         }
-      stage('2nd')
-      {
-        steps{
-        checkout([$class: 'GitSCM', userRemoteConfigs: [url: 'https://github.com/amitsont/CI_CD_DEMOS']])
+        stage('Test'){
+            steps {
+                sh 'make check'
+                junit 'reports/**/*.xml' 
+            }
         }
-      }
-      }
+        stage('Deploy') {
+            steps {
+                sh 'make publish'
+            }
+        }
+    }
 }
