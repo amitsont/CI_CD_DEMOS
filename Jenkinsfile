@@ -4,13 +4,13 @@ pipeline {
         stage('Build') { 
             steps { 
                 echo 'make' 
-                echo "${withEnv.BRANCH_NAME}"
+                echo "${env.BRANCH_NAME}"
             }
         }
         stage('Test'){
             steps {
                 echo 'make check'
-                echo "${JOB_NAME}"
+                echo "${env.JOB_NAME}"
             }
         }
         stage('Deploy') {
