@@ -16,6 +16,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'make publish'
+                echo "${env.BUILD_NUMBER}"
             }
         }
     }
