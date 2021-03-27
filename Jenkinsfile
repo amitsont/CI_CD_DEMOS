@@ -18,6 +18,7 @@ pipeline {
             steps {
                 echo 'make publish'
                 echo "${env.BUILD_NUMBER}"
+                echo "time took to complete pipeline is ${currentBuild.duration}"
             }
         }
     }
